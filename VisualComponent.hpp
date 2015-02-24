@@ -15,7 +15,8 @@ enum gameStateEnums
 	mainGame = 1,
 	menu = 2,
 	productCreateScreen = 3,
-	endGame = 4
+	endGame = 4,
+	aiTest = 5
 };
 
 class VisualComponent

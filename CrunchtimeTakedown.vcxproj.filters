@@ -1,0 +1,307 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="GameState">
+      <UniqueIdentifier>{a76a525d-ca1f-4e40-87f1-2d318b1c1295}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EntityClasses">
+      <UniqueIdentifier>{80a96c8b-7d88-487d-86bc-7c98dc8f7da0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CommonEngine">
+      <UniqueIdentifier>{40f2a8f3-4614-4431-a34f-d36119727504}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Input">
+      <UniqueIdentifier>{278a668a-41db-4a96-a239-6d0135ab7a32}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CommonEngine\World/GameData">
+      <UniqueIdentifier>{aa1a15dd-b56f-4a07-b1fc-f211c8c17460}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\img">
+      <UniqueIdentifier>{716bd53e-fafb-46f8-857d-9c12f5fd2e8e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\img\Tiles">
+      <UniqueIdentifier>{edb79775-b5b5-4a9b-8533-5be02bb9e187}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PUGI">
+      <UniqueIdentifier>{81dd17df-01f3-4867-a7cf-c0a08c49387e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\img\Backgrounds">
+      <UniqueIdentifier>{c21adc5c-3e45-4ad8-9cd8-7dc28e24e05a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CommonEngine\Audio">
+      <UniqueIdentifier>{ccde5e31-ea4e-4b88-ad27-796afcae526e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CommonEngine\Visual">
+      <UniqueIdentifier>{cd9bc4db-ebf9-421b-9e72-321abd3ec8ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Products">
+      <UniqueIdentifier>{0444b943-668c-4038-972b-0b90b2cbad43}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameState.cpp">
+      <Filter>GameState</Filter>
+    </ClCompile>
+    <ClCompile Include="texture.cpp">
+      <Filter>CommonEngine\Visual</Filter>
+    </ClCompile>
+    <ClCompile Include="entity.cpp">
+      <Filter>EntityClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="inputs.cpp">
+      <Filter>Input</Filter>
+    </ClCompile>
+    <ClCompile Include="VisualComponent.cpp">
+      <Filter>CommonEngine\Visual</Filter>
+    </ClCompile>
+    <ClCompile Include="common.cpp">
+      <Filter>CommonEngine\Visual</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldComponent.cpp">
+      <Filter>CommonEngine\World/GameData</Filter>
+    </ClCompile>
+    <ClCompile Include="ClsMapData.cpp">
+      <Filter>CommonEngine\World/GameData</Filter>
+    </ClCompile>
+    <ClCompile Include="PugiXml\pugixml.cpp">
+      <Filter>PUGI</Filter>
+    </ClCompile>
+    <ClCompile Include="ClsButton.cpp">
+      <Filter>Input</Filter>
+    </ClCompile>
+    <ClCompile Include="ClsBuilding.cpp">
+      <Filter>CommonEngine\World/GameData</Filter>
+    </ClCompile>
+    <ClCompile Include="SoundComponent.cpp">
+      <Filter>CommonEngine\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="Point.cpp">
+      <Filter>CommonEngine\Visual</Filter>
+    </ClCompile>
+    <ClCompile Include="Product.cpp">
+      <Filter>Products</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="texture.hpp">
+      <Filter>CommonEngine\Visual</Filter>
+    </ClInclude>
+    <ClInclude Include="entity.hpp">
+      <Filter>EntityClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="GameState.h">
+      <Filter>GameState</Filter>
+    </ClInclude>
+    <ClInclude Include="inputs.hpp">
+      <Filter>Input</Filter>
+    </ClInclude>
+    <ClInclude Include="VisualComponent.hpp">
+      <Filter>CommonEngine\Visual</Filter>
+    </ClInclude>
+    <ClInclude Include="common.hpp">
+      <Filter>CommonEngine\Visual</Filter>
+    </ClInclude>
+    <ClInclude Include="ClsMapData.hpp">
+      <Filter>CommonEngine\World/GameData</Filter>
+    </ClInclude>
+    <ClInclude Include="PugiXml\pugiconfig.hpp">
+      <Filter>PUGI</Filter>
+    </ClInclude>
+    <ClInclude Include="PugiXml\pugixml.hpp">
+      <Filter>PUGI</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldComponent.hpp">
+      <Filter>CommonEngine\World/GameData</Filter>
+    </ClInclude>
+    <ClInclude Include="ClsButton.h">
+      <Filter>Input</Filter>
+    </ClInclude>
+    <ClInclude Include="ClsBuilding.h">
+      <Filter>CommonEngine\World/GameData</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundComponent.h">
+      <Filter>CommonEngine\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="Point.h">
+      <Filter>CommonEngine\Visual</Filter>
+    </ClInclude>
+    <ClInclude Include="Product.h">
+      <Filter>Products</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="art\People\Person1LeftDown.png">
+      <Filter>Resource Files\img</Filter>
+    </Image>
+    <Image Include="art\Tiles\bridgeEast.png">
+      <Filter>Resource Files\img\Tiles</Filter>
+    </Image>
+    <Image Include="art\Tiles\bridgeNorth.png">
+      <Filter>Resource Files\img\Tiles</Filter>
+    </Image>
+    <Image Include="art\Tiles\crossroad.png">
+      <Filter>Resource Files\img\Tiles</Filter>
+    </Image>
+    <Image Include="art\Tiles\dirt.png">
+      <Filter>Resource Files\img\Tiles</Filter>
+    </Image>
+    <Image Include="art\Tiles\dirtHigh.png">
+      <Filter>Resource Files\img\Tiles</Filter>
+    </Image>
+    <Image Include="art\Tiles\grass.png">
+      <Filter>Resource Files\img\Tiles</Filter>
+    </Image>
+    <Image Include="art\Tiles\lot.png">
+      <Filter>Resource Files\img\Tiles</Filter>
+    </Image>
+    <Image Include="art\Tiles\lotCornerEast.png">
+      <Filter>Resource Files\img\Tiles</Filter>
+    </Image>
+    <Image Include="art\Tiles\lotCornerNorth.png">
+      <Filter>Resource Files\img\Tiles</Filter>
+    </Image>
+    <Image Include="art\Tiles\lotCornerSouth.png">
+      <Filter>Resource Files\img\Tiles</Filter>
+    </Image>
+    <Image Include="art\Tiles\lotCornerWest.png">
+      <Filter>Resource Files\img\Tiles</Filter>
+    </Image>
+    <Image Include="art\Tiles\lotEast.png">
+      <Filter>Resource Files\img\Tiles</Filter>
+    </Image>
+    <Image Include="art\Tiles\lotExitEast.png">
+      <Filter>Resource Files\img\Tiles</Filter>
+    </Image>
+    <Image Include="art\Tiles\lotExitNorth.png">
+      <Filter>Resource Files\img\Tiles</Filter>
+    </Image>
+    <Image Include="art\Tiles\lotExitSouth.png">
+      <Filter>Resource Files\img\Tiles</Filter>
+    </Image>
+    <Image Include="art\Tiles\lotExitWest.png">
+      <Filter>Resource Files\img\Tiles</Filter>
+    </Image>
+    <Image Include="art\Tiles\lotNorth.png">
+      <Filter>Resource Files\img\Tiles</Filter>
+    </Image>
+    <Image Include="art\Tiles\lotPark.png">
+      <Filter>Resource Files\img\Tiles</Filter>
+    </Image>
+    <Image Include="art\Tiles\lotSouth.png">
+      <Filter>Resource Files\img\Tiles</Filter>
+    </Image>
+    <Image Include="art\Tiles\lotWest.png">
+      <Filter>Resource Files\img\Tiles</Filter>
+    </Image>
+    <Image Include="art\Tiles\roadCornerES.png">
+      <Filter>Resource Files\img\Tiles</Filter>
+    </Image>
+    <Image Include="art\Tiles\roadCornerNE.png">
+      <Filter>Resource Files\img\Tiles</Filter>
+    </Image>
+    <Image Include="art\Tiles\roadCornerNW.png">
+      <Filter>Resource Files\img\Tiles</Filter>
+    </Image>
+    <Image Include="art\Tiles\roadCornerWS.png">
+      <Filter>Resource Files\img\Tiles</Filter>
+    </Image>
+    <Image Include="art\Tiles\roadEast.png">
+      <Filter>Resource Files\img\Tiles</Filter>
+    </Image>
+    <Image Include="art\Tiles\roadEndEast.png">
+      <Filter>Resource Files\img\Tiles</Filter>
+    </Image>
+    <Image Include="art\Tiles\roadEndNorth.png">
+      <Filter>Resource Files\img\Tiles</Filter>
+    </Image>
+    <Image Include="art\Tiles\roadEndSouth.png">
+      <Filter>Resource Files\img\Tiles</Filter>
+    </Image>
+    <Image Include="art\Tiles\roadEndWest.png">
+      <Filter>Resource Files\img\Tiles</Filter>
+    </Image>
+    <Image Include="art\Tiles\roadNorth.png">
+      <Filter>Resource Files\img\Tiles</Filter>
+    </Image>
+    <Image Include="art\Tiles\roadTEast.png">
+      <Filter>Resource Files\img\Tiles</Filter>
+    </Image>
+    <Image Include="art\Tiles\roadTNorth.png">
+      <Filter>Resource Files\img\Tiles</Filter>
+    </Image>
+    <Image Include="art\Tiles\roadTSouth.png">
+      <Filter>Resource Files\img\Tiles</Filter>
+    </Image>
+    <Image Include="art\Tiles\roadTWest.png">
+      <Filter>Resource Files\img\Tiles</Filter>
+    </Image>
+    <Image Include="art\Tiles\shop1.png">
+      <Filter>Resource Files\img\Tiles</Filter>
+    </Image>
+    <Image Include="art\Tiles\water.png">
+      <Filter>Resource Files\img\Tiles</Filter>
+    </Image>
+    <Image Include="art\Tiles\waterBeachCornerEast.png">
+      <Filter>Resource Files\img\Tiles</Filter>
+    </Image>
+    <Image Include="art\Tiles\waterBeachCornerNorth.png">
+      <Filter>Resource Files\img\Tiles</Filter>
+    </Image>
+    <Image Include="art\Tiles\waterBeachCornerSouth.png">
+      <Filter>Resource Files\img\Tiles</Filter>
+    </Image>
+    <Image Include="art\Tiles\waterBeachCornerWest.png">
+      <Filter>Resource Files\img\Tiles</Filter>
+    </Image>
+    <Image Include="art\Tiles\waterBeachEast.png">
+      <Filter>Resource Files\img\Tiles</Filter>
+    </Image>
+    <Image Include="art\Tiles\waterBeachNorth.png">
+      <Filter>Resource Files\img\Tiles</Filter>
+    </Image>
+    <Image Include="art\Tiles\waterBeachSouth.png">
+      <Filter>Resource Files\img\Tiles</Filter>
+    </Image>
+    <Image Include="art\Tiles\waterBeachWest.png">
+      <Filter>Resource Files\img\Tiles</Filter>
+    </Image>
+    <Image Include="art\Tiles\waterCornerEast.png">
+      <Filter>Resource Files\img\Tiles</Filter>
+    </Image>
+    <Image Include="art\Tiles\waterCornerNorth.png">
+      <Filter>Resource Files\img\Tiles</Filter>
+    </Image>
+    <Image Include="art\Tiles\waterCornerSouth.png">
+      <Filter>Resource Files\img\Tiles</Filter>
+    </Image>
+    <Image Include="art\Tiles\waterCornerWest.png">
+      <Filter>Resource Files\img\Tiles</Filter>
+    </Image>
+    <Image Include="art\Tiles\waterEast.png">
+      <Filter>Resource Files\img\Tiles</Filter>
+    </Image>
+    <Image Include="art\Tiles\waterNorth.png">
+      <Filter>Resource Files\img\Tiles</Filter>
+    </Image>
+    <Image Include="art\Tiles\waterSouth.png">
+      <Filter>Resource Files\img\Tiles</Filter>
+    </Image>
+    <Image Include="art\Tiles\waterWest.png">
+      <Filter>Resource Files\img\Tiles</Filter>
+    </Image>
+    <Image Include="art\Backgrounds\MainBack.png">
+      <Filter>Resource Files\img\Backgrounds</Filter>
+    </Image>
+  </ItemGroup>
+</Project>

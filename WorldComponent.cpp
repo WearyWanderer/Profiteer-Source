@@ -69,6 +69,52 @@ void WorldComponent::LoadMapTiles(VisualComponent* textureLib, string filepath)
 	SeedBuildings(textureLib);
 }
 
+void WorldComponent::CleanMap()
+{
+	mapInstance.tilesList.clear();
+	mapInstance.buildingList.clear();
+}
+
+void WorldComponent::LoadAIMapTiles(VisualComponent* textureLib, string filepath)
+{
+	ifstream mapFile("testAIMap.map");
+	//Variables
+	int mapHeaders = 4; //the amount of lines that
+	char tileArray[512 * 512];
+	int tileCount = 512 * 512;
+	int currentTile = 1;
+
+	for (unsigned int i = 0; i < mapHeaders; i++)
+	{
+		std::string thisLine;
+		getline(mapFile, thisLine);
+		cout << thisLine << endl;
+	}
+
+	while (currentTile != tileCount)
+	{
+		mapFile.get(tileArray[currentTile]);
+		//cout << currentTileSymbol;
+		currentTile += 1;
+		//cout << currentTile << endl;
+		switch (tileArray[currentTile])
+		{
+		case '@':
+		{
+			cout << "Out of Bounds" << endl;
+		}
+			break;
+		case '.':
+		{
+			cout << "Passable Terrain" << endl;
+		}
+			break;
+		default:
+			break;
+		}
+	}
+}
+
 void WorldComponent::SeedBuildings(VisualComponent* textureLib)
 {
 	srand(HAPI->GetTime());
@@ -104,6 +150,7 @@ void WorldComponent::SeedBuildings(VisualComponent* textureLib)
 
 }
 
+#pragma region Movement&AdjacencyChecks
 bool WorldComponent::checkMovementValidityList(int tileID, int sourceList[], int length)
 {
 	for (int i = 0; i < length; i++) //for each possible movement tile ID
@@ -131,3 +178,4 @@ bool WorldComponent::checkMovementTileAdjacency(int xAdj, int yAdj)
 
 	return false; //otherwise return false
 }
+#pragma endregion
