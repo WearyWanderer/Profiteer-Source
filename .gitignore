@@ -14,6 +14,16 @@ $RECYCLE.BIN/
 *.msm
 *.msp
 
+# List of non-code files & folders
+art/
+sound/
+maps/
+HAPI/
+PugiXml/
+Release/
+Debug/
+x64/
+
 # =========================
 # Operating System Files
 # =========================
