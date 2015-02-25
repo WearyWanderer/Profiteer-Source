@@ -100,9 +100,6 @@
     <ClInclude Include="entity.hpp">
       <Filter>EntityClasses</Filter>
     </ClInclude>
-    <ClInclude Include="GameState.h">
-      <Filter>GameState</Filter>
-    </ClInclude>
     <ClInclude Include="inputs.hpp">
       <Filter>Input</Filter>
     </ClInclude>
@@ -138,6 +135,9 @@
     </ClInclude>
     <ClInclude Include="Product.h">
       <Filter>Products</Filter>
+    </ClInclude>
+    <ClInclude Include="GameState.h">
+      <Filter>GameState</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

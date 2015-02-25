@@ -30,17 +30,12 @@ void InputComponent::InputCycle(HAPI_TMouseData mouseMap, HAPI_TKeyboardData key
 
 #pragma region DraggableCamera
 
-	if (mouseMap.rightButtonDown && gameStateMngrRef->GetStateID() == mainGame) //if the right mouse button is down and we're trying to get the map to move
+	if (mouseMap.rightButtonDown && (gameStateMngrRef->GetStateID() == mainGame || gameStateMngrRef->GetStateID() == aiTest)) //if the right mouse button is down and we're trying to get the map to move
 	{
 		if (prevMousePos.Compare(0, 0) == false) //if the right mouse button was held down last frame
 		{
 			gameStateMngrRef->cameraOffset.SetIncremental(prevMousePos.x - mouseMap.x, prevMousePos.y - mouseMap.y);
-			for each (ClsBuilding* building in gameStateMngrRef->GetWorld()->GetMapObject()->buildingList)
-			{
-
-			}
 		}
-
 		prevMousePos.Set(mouseMap.x, mouseMap.y); //capture shot of the current frame
 	}
 	else
@@ -270,12 +265,9 @@ void InputComponent::CallbackEvent(int buttonCallbackID, HAPI_TMouseData mouseMa
 			HAPI->Close();
 		}
 			break;
-		case goToSettings:
+		case goToAI:
 		{
-			for (auto i : gameStateMngrRef->buttonList)
-			{
-				i->ToggleShow();
-			}
+			gameStateMngrRef->SwitchStateComplete(aiTest);
 		}
 			break;
 		case productScreen:

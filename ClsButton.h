@@ -10,7 +10,7 @@ enum ButtonResponseList
 {
 	playGame = 1,
 	exitGame = 2,
-	goToSettings = 3,
+	goToAI = 3,
 	unPauseGame = 4,
 	productScreen = 5,
 	itemLeft = 6,

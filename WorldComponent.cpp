@@ -77,42 +77,61 @@ void WorldComponent::CleanMap()
 
 void WorldComponent::LoadAIMapTiles(VisualComponent* textureLib, string filepath)
 {
-	ifstream mapFile("testAIMap.map");
+	ifstream mapFile("maps/testAIMap.map");
 	//Variables
 	int mapHeaders = 4; //the amount of lines that
-	char tileArray[512 * 512];
-	int tileCount = 512 * 512;
-	int currentTile = 1;
+	int mapWidth;
+	int	mapHeight;
 
-	for (unsigned int i = 0; i < mapHeaders; i++)
+	for (int i = 0; i < mapHeaders; i++)
 	{
 		std::string thisLine;
+		std::string delimiter = " ";
+
 		getline(mapFile, thisLine);
-		cout << thisLine << endl;
+		if (i == 1)
+		{
+			thisLine.erase(0, 6);
+			mapWidth = std::stoi(thisLine);
+		}
+		if (i == 2)
+		{
+			thisLine.erase(0, 6);
+			mapHeight = std::stoi(thisLine);
+		}
 	}
 
-	while (currentTile != tileCount)
+	for (int x = 0; x < mapWidth; x++)
 	{
-		mapFile.get(tileArray[currentTile]);
-		//cout << currentTileSymbol;
-		currentTile += 1;
-		//cout << currentTile << endl;
-		switch (tileArray[currentTile])
+		for (int y = 0; y < mapWidth; y++)
 		{
-		case '@':
-		{
-			cout << "Out of Bounds" << endl;
-		}
-			break;
-		case '.':
-		{
-			cout << "Passable Terrain" << endl;
-		}
-			break;
-		default:
-			break;
+			char thisTileSymbol;
+			mapFile.get(thisTileSymbol);
+			Tile* tempTile = new Tile();
+
+			switch (thisTileSymbol)
+			{
+				case '@':
+				{
+					tempTile->InitTile(x, y, textureLib->tilesTextureLibrary[50], 50); //create this tile
+					mapInstance.tilesList.push_back(tempTile);
+				}
+					break;
+				case '.':
+				{
+					tempTile->InitTile(x, y, textureLib->tilesTextureLibrary[1], 1); //create this tile
+					mapInstance.tilesList.push_back(tempTile);
+				}
+					break;
+				default:
+					break;
+			}
+
 		}
 	}
+		
+
+
 }
 
 void WorldComponent::SeedBuildings(VisualComponent* textureLib)

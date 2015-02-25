@@ -122,7 +122,13 @@ void VisualComponent::RenderCycle(int state, ClsMapData* mapRef, std::vector<Cls
 		RenderUI(buttonList, entityList, mapRef->GetBuildingData(), screenRect, cameraOffset, state);
 		RenderMouse(mousePos);
 	}
-		break;
+	case aiTest:
+	{
+		RenderMap(mapRef->GetTileData(), screenRect, cameraOffset);
+		RenderEntities(entityList, screenRect, cameraOffset);
+		RenderMouse(mousePos);
+	}
+	break;
 	}
 } //could just pass gamestate and use get functions to create references inside here
 
@@ -132,6 +138,7 @@ void VisualComponent::UpdateScreen(int state)
 {
 	switch (state)
 	{
+	case aiTest:
 	case mainGame:
 	{
 		ClearBackground(HAPI_TColour(24,56,32), screen);

@@ -55,16 +55,14 @@ void GameState::InitialiseState(int state)
 		ClsButton* buttonBG = new ClsButton(visualCompRef->UITextureLibrary[0], 350, 210, true, 0); //zero means unused for callbacks, just a visual piece/backlayer
 		ClsButton* exitButton = new ClsButton(visualCompRef->UITextureLibrary[3], 415, 310, true, exitGame);
 		ClsButton* playButton = new ClsButton(visualCompRef->UITextureLibrary[4], 415, 220, true, productScreen);
-		ClsButton* settingsButton = new ClsButton(visualCompRef->UITextureLibrary[5], 415, 265, true, goToSettings);
+		ClsButton* aiTestButton = new ClsButton(visualCompRef->UITextureLibrary[5], 415, 265, true, goToAI);
 		ClsButton* buttonBG2 = new ClsButton(visualCompRef->UITextureLibrary[0], 350, 210, false, 0); //hide this to turn on when going to settings page
-		ClsButton* backButton = new ClsButton(visualCompRef->UITextureLibrary[6], 415, 380, false, goToSettings);
 
 		buttonList.push_back(buttonBG);
 		buttonList.push_back(buttonBG2);
 		buttonList.push_back(playButton);
 		buttonList.push_back(exitButton);
-		buttonList.push_back(backButton);
-		buttonList.push_back(settingsButton);
+		buttonList.push_back(aiTestButton);
 
 		soundMngr.SwitchSong(2);
 	}
@@ -105,6 +103,12 @@ void GameState::InitialiseState(int state)
 	}
 		break;
 		//error catching state
+	case aiTest:
+	{
+		currentState = 5;
+		worldMngrRef->CleanMap();
+		worldMngrRef->LoadAIMapTiles(visualCompRef, "maps/testAIMap.map");
+	}
 	default:
 		break;
 	}

@@ -17,7 +17,7 @@ int ClsButton::buttonClicked() //if generic function pointers were allowed this 
 
 		return 2;
 		break;
-	case goToSettings:
+	case goToAI:
 
 		return 3;
 		break;

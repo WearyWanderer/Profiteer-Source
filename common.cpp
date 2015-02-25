@@ -49,7 +49,7 @@ void DrawPixel(int r, int g, int b, int a, BYTE* screenptr, int x, int y)
 
 	int offset = (x + y * screenWidth) * 4;
 	BYTE* pixel = screenptr + offset;
-	memcpy(pixel, &col, 4);
+	*((DWORD*)(pixel)) = *((DWORD*)&col);
 
 }
 
@@ -189,7 +189,6 @@ void ClipTextureDraw(Clstexture* texture, BYTE* screenptr, const Clsrectangle de
 		for (int i = clippedRect.top; i < clippedRect.GetHeight(); ++i)
 		{
 		memcpy(destScreenPtr, currentTexPixel, (clippedRect.GetWidth() * 4));
-
 		//advance to next row of pixels on screen
 		currentTexPixel += sourceRect.GetWidth() * 4;
 		destScreenPtr += destRow * 4;
@@ -227,6 +226,7 @@ void ClipTextureDrawAlpha(Clstexture* texture, BYTE* screenptr, const Clsrectang
 	int endOfLineSrcIncrement = (sourceRect.GetWidth() - (clippedRect.right - clippedRect.left)) * 4;
 
 	HAPI_TColour colour;
+	HAPI_TColour screenPixelColour;
 
 	//if not completely off screen
 	if (clippedRect.GetHeight() > 0 && clippedRect.GetWidth() > 0)
@@ -241,12 +241,10 @@ void ClipTextureDrawAlpha(Clstexture* texture, BYTE* screenptr, const Clsrectang
 			{
 				if (colour.alpha == 255)
 				{
-					memcpy(destScreenPtr, currentTexPixel, 4);
+					*((DWORD*)(destScreenPtr)) = *((DWORD*)currentTexPixel);
 				}
 				else
-				{
-					HAPI_TColour screenPixelColour;
-
+				{	
 					memcpy(&screenPixelColour, destScreenPtr, 4);
 
 					//blend the taken pixel with what we are adding to it, factor in the alpha channel
@@ -254,7 +252,7 @@ void ClipTextureDrawAlpha(Clstexture* texture, BYTE* screenptr, const Clsrectang
 					screenPixelColour.green = screenPixelColour.green + ((colour.alpha * (colour.green - screenPixelColour.green)) >> 8);
 					screenPixelColour.red = screenPixelColour.red + ((colour.alpha * (colour.red - screenPixelColour.red)) >> 8);
 
-					memcpy(destScreenPtr, &screenPixelColour, 4);
+					*((DWORD*)(destScreenPtr)) = *((DWORD*)&screenPixelColour);
 				}
 			}
 			destScreenPtr += 4;
@@ -300,27 +298,24 @@ void ClipTextureDrawAlpha(Clstexture* texture, BYTE* screenptr, const Clsrectang
 	int endOfLineDestIncrement = (screenWidth - (clippedRect.right - clippedRect.left)) * 4;
 	int endOfLineSrcIncrement = (sourceRect.GetWidth() - (clippedRect.right - clippedRect.left)) * 4;
 
+	HAPI_TColour colour;
+	HAPI_TColour screenPixelColour;
 	//if not completely off screen
 	if (clippedRect.GetHeight() > 0 && clippedRect.GetWidth() > 0)
 		for (int y = clippedRect.top; y < clippedRect.bottom; ++y)
 		{
 		for (int x = clippedRect.left; x < clippedRect.right; ++x)
 		{
-
-			HAPI_TColour colour;
-
 			memcpy(&colour, currentTexPixel, 4);
 
 			if (colour.alpha != 0)
 			{
 				if (colour.alpha == 255)
 				{
-					memcpy(destScreenPtr, currentTexPixel, 4);
+					*((DWORD*)(destScreenPtr)) = *((DWORD*)currentTexPixel);
 				}
 				else
 				{
-					HAPI_TColour screenPixelColour;
-
 					memcpy(&screenPixelColour, destScreenPtr, 4);
 
 					//blend the taken pixel with what we are adding to it, factor in the alpha channel
@@ -328,20 +323,15 @@ void ClipTextureDrawAlpha(Clstexture* texture, BYTE* screenptr, const Clsrectang
 					screenPixelColour.green = screenPixelColour.green + ((colour.alpha * (colour.green - screenPixelColour.green)) >> 8);
 					screenPixelColour.red = screenPixelColour.red + ((colour.alpha * (colour.red - screenPixelColour.red)) >> 8);
 
-					memcpy(destScreenPtr, &screenPixelColour, 4);
+					*((DWORD*)(destScreenPtr)) = *((DWORD*)&screenPixelColour);
 				}
 			}
 			destScreenPtr += 4;
 			currentTexPixel += 4;
 		}
-
 		currentTexPixel += endOfLineSrcIncrement;
 		destScreenPtr += endOfLineDestIncrement;
 		}
-
-
-
-
 }
 
 #pragma endregion
